@@ -3,6 +3,6 @@
 using ADO.NET_EF_Test_Aplication.AdoNet;
 using ADO.NET_EF_Test_Aplication.EFCore;
 
-AdoNet.AdoNetDatabase();
+//AdoNet.AdoNetDatabase();
 
-//EF.EfCreateDatabase();
+EF.EfCreateDatabase();

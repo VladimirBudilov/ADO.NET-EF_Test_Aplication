@@ -1,5 +1,4 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using ADO.NET_EF_Test_Aplication.EFCore.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ADO.NET_EF_Test_Aplication.EFCore
@@ -31,42 +30,7 @@ namespace ADO.NET_EF_Test_Aplication.EFCore
         }
     }
 
-    public class TestContext : DbContext
-    {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite("Data Source=./usersdata.db");
-        }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Car> Car { get; set; }
-        
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<User>()
-                .HasOne<Car>(s => s.Car)
-                .WithMany(g => g.Users)
-                .HasForeignKey(s => s.CarId);
-        }
-    }
+    
 
-    public class User
-    {
-        [Key]
-        public int Id { get; set; }
-        public string Name { get; set; }
-        
-        [ForeignKey("Car")]
-        public int CarId { get; set; }
-        
-        public Car Car { get; set; }
-    }
 
-    public class Car
-    {
-        [Key]
-        public int Id { get; set; }
-        public string Name { get; set; }
-        
-        public ICollection<User> Users { get; set; }
-    }
 }
