@@ -1,1 +1,0 @@
-# ADO.NET_Test_Aplication
