@@ -68,3 +68,13 @@
 /Users/vbudilov/Desktop/C#Projects/ADO.NET-EF_Test_Aplication/obj/Debug/net7.0/ADO.NET-EF_Test_Aplication.pdb
 /Users/vbudilov/Desktop/C#Projects/ADO.NET-EF_Test_Aplication/obj/Debug/net7.0/ADO.NET-EF_Test_Aplication.genruntimeconfig.cache
 /Users/vbudilov/Desktop/C#Projects/ADO.NET-EF_Test_Aplication/obj/Debug/net7.0/ref/ADO.NET-EF_Test_Aplication.dll
+/Users/vbudilov/Desktop/C#Projects/ADO.NET-EF_Test_Aplication/bin/Debug/net7.0/Humanizer.dll
+/Users/vbudilov/Desktop/C#Projects/ADO.NET-EF_Test_Aplication/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/vbudilov/Desktop/C#Projects/ADO.NET-EF_Test_Aplication/bin/Debug/net7.0/Mono.TextTemplating.dll
+/Users/vbudilov/Desktop/C#Projects/ADO.NET-EF_Test_Aplication/bin/Debug/net7.0/System.CodeDom.dll
+/Users/vbudilov/Desktop/C#Projects/ADO.NET-EF_Test_Aplication/bin/Debug/net7.0/Microsoft.Extensions.Configuration.dll
+/Users/vbudilov/Desktop/C#Projects/ADO.NET-EF_Test_Aplication/bin/Debug/net7.0/Microsoft.Extensions.Configuration.FileExtensions.dll
+/Users/vbudilov/Desktop/C#Projects/ADO.NET-EF_Test_Aplication/bin/Debug/net7.0/Microsoft.Extensions.Configuration.Json.dll
+/Users/vbudilov/Desktop/C#Projects/ADO.NET-EF_Test_Aplication/bin/Debug/net7.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/Users/vbudilov/Desktop/C#Projects/ADO.NET-EF_Test_Aplication/bin/Debug/net7.0/Microsoft.Extensions.FileProviders.Physical.dll
+/Users/vbudilov/Desktop/C#Projects/ADO.NET-EF_Test_Aplication/bin/Debug/net7.0/Microsoft.Extensions.FileSystemGlobbing.dll

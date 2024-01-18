@@ -1,0 +1,80 @@
+info: 1/18/2024 10:39:32.072 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+info: 1/18/2024 10:39:32.091 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      PRAGMA journal_mode = 'wal';
+info: 1/18/2024 10:39:32.179 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "Car" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_Car" PRIMARY KEY AUTOINCREMENT,
+          "Name" TEXT NOT NULL
+      );
+info: 1/18/2024 10:39:32.179 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE "Users" (
+          "Id" INTEGER NOT NULL CONSTRAINT "PK_Users" PRIMARY KEY AUTOINCREMENT,
+          "Name" TEXT NOT NULL,
+          "CarId" INTEGER NOT NULL,
+          CONSTRAINT "FK_Users_Car_CarId" FOREIGN KEY ("CarId") REFERENCES "Car" ("Id") ON DELETE CASCADE
+      );
+info: 1/18/2024 10:39:32.179 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX "IX_Users_CarId" ON "Users" ("CarId");
+info: 1/18/2024 10:39:32.367 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 6)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Car" ("Name")
+      VALUES (@p0)
+      RETURNING "Id";
+info: 1/18/2024 10:39:32.382 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p2='?' (Size = 4)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("CarId", "Name")
+      VALUES (@p1, @p2)
+      RETURNING "Id";
+info: 1/18/2024 10:39:32.383 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("CarId", "Name")
+      VALUES (@p0, @p1)
+      RETURNING "Id";
+info: 1/18/2024 10:39:32.630 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "u"."Id", "u"."CarId", "u"."Name", "c"."Id", "c"."Name"
+      FROM "Users" AS "u"
+      INNER JOIN "Car" AS "c" ON "u"."CarId" = "c"."Id"
+info: 1/18/2024 10:39:32.649 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 4)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Car" ("Name")
+      VALUES (@p0)
+      RETURNING "Id";
+info: 1/18/2024 10:39:32.650 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p1='?' (DbType = Int32), @p2='?' (Size = 4)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("CarId", "Name")
+      VALUES (@p1, @p2)
+      RETURNING "Id";
+info: 1/18/2024 10:39:32.654 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "u"."Id", "u"."CarId", "u"."Name"
+      FROM "Users" AS "u"
+info: 1/18/2024 10:39:32.658 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4)], CommandType='Text', CommandTimeout='30']
+      UPDATE "Users" SET "CarId" = @p0, "Name" = @p1
+      WHERE "Id" = @p2
+      RETURNING 1;
+info: 1/18/2024 10:39:32.659 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("CarId", "Name")
+      VALUES (@p0, @p1)
+      RETURNING "Id";
+info: 1/18/2024 10:39:32.661 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "u"."Id", "u"."CarId", "u"."Name"
+      FROM "Users" AS "u"
+info: 1/18/2024 10:39:32.666 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      DELETE FROM "Users"
+      WHERE "Id" = @p0
+      RETURNING 1;
+info: 1/18/2024 10:39:32.672 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "c"."Id", "c"."Name"
+      FROM "Car" AS "c"
